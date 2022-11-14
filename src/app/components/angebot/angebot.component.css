@@ -1,0 +1,136 @@
+.card-body{
+background-color: #fdfbfbe9;
+}
+.card {
+  width: fit-content;
+  @apply h-[35rem];
+  @apply w-[23.5rem];
+}
+.card-img {
+  @apply h-52;
+}
+div.price-item {
+  @apply flex;
+  @apply flex-col;
+  @apply text-2xl;
+  @apply font-mono;
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+label.price-label {
+  @apply text-xl;
+  font-weight: bold;
+}
+
+.ribbon {
+  position: absolute;
+  left: 19px;
+  top: -60px;
+  z-index: 1;
+  overflow: hidden;
+  width: 75px;
+  height: 75px;
+  text-align: right;
+}
+.ribbon span {
+  font-size: 10px;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 20px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  width: 100px;
+  display: block;
+  background: #79a70a;
+  background: linear-gradient(#f70505 0%, #8f0808 100%);
+  box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 19px;
+  left: -21px;
+}
+.ribbon span::before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 100%;
+  z-index: -1;
+  border-left: 3px solid #8f0808;
+  border-right: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #8f0808;
+}
+.ribbon span::after {
+  content: "";
+  position: absolute;
+  right: 0px;
+  top: 100%;
+  z-index: -1;
+  border-left: 3px solid transparent;
+  border-right: 3px solid #8f0808;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #8f0808;
+}
+
+.zoom {
+  transition: transform 0.8s;
+  margin: 0 auto;
+  padding: 26px;
+}
+
+.zoom:hover {
+  transform: scale(1.1);
+}
+
+.product-amount {
+  @apply rounded-lg;
+  margin-left: 13px;
+  font-size: 23px;
+  margin-right: 13px;
+  width: 50px;
+  background-color: #f3f4f6;
+  text-align: center;
+  border: 0px;
+}
+
+.cart-btn {
+  font-size: 20px;
+  height: 34px;
+  width: 7px;
+  padding: 2px 28px 2px 18px;
+}
+
+.add-cart-ico:hover {
+  color: blue;
+}
+
+/* Styles for wrapping the search box */
+
+.main {
+  width: 50%;
+  margin: 50px auto;
+}
+
+/* Bootstrap 4 text input with search icon */
+
+.has-search .form-control {
+  padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
+}
+
+button.unsere-angebote-btn {
+  display: none !important;
+}

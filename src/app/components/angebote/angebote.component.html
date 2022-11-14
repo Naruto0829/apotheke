@@ -1,0 +1,19 @@
+<app-loader *ngIf="!stop"></app-loader>
+<div class="text-center" style="overflow-x: hidden">
+  <h1
+    class="text-blue-500"
+    style="font-size: xx-large; margin-top: 10rem; font-family: 'Times New Roman', Times, serif"
+  >
+    Unsere neuen Angebote
+  </h1>
+  <section class="flex flex-col p-4 justify-center align-middle min-h-screen">
+    <app-searchbar (searched)="show($event)"></app-searchbar>
+    <div class="items-center">
+      <div class="grid angebote gap-x-6 lg:gap-x-12 mx-auto">
+        <ng-container *ngFor="let angebot of data">
+          <app-angebot [item]="angebot"></app-angebot>
+        </ng-container>
+      </div>
+    </div>
+  </section>
+</div>

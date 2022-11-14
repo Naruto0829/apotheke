@@ -1,0 +1,21 @@
+<app-loader *ngIf="!stop"></app-loader>
+<section class="mt-36 mb-32">
+  <div class="m-auto">
+    <noscript
+      ><p style="text-align: left">
+        Sie haben derzeit JavaScript deaktiviert.
+        <a href="https://turnonjs.com">Aktivieren Sie JavaScript</a>
+        um diese Google-Karte anzuzeigen.
+      </p></noscript
+    >
+    <div style="height: 70vh" class="map-container relative shadow-lg">
+      <iframe
+        src="https://maps.google.de/maps?q=riem-apotheke%20landshut&t=k&z=13&ie=UTF8&iwloc=&output=embed"
+        class="left-0 top-0 h-full w-full absolute"
+        frameborder="0"
+        loading="lazy"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</section>

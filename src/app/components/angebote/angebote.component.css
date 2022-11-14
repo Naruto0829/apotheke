@@ -1,0 +1,18 @@
+.unsere-angebote-btn {
+  display: none !important;
+}
+@media screen and (min-width:997px) {
+  .angebote {
+    @apply md:grid-cols-2 !important;
+  }
+}
+@media screen and (min-width:1400px) {
+  .angebote {
+    @apply md:grid-cols-3 !important;
+  }
+}
+@media screen and (min-width: 1700px) {
+  .angebote {
+    @apply lg:grid-cols-4 !important;
+  }
+}
