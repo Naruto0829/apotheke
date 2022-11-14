@@ -1,0 +1,12 @@
+<div class="container my-24 px-6 mx-auto" style="margin-top: 10rem">
+  <h1
+    class="font-medium leading-tight mt-0 mb-2 text-blue-600 text-center text-9xl"
+    style="font-family: 'Great Vibes'; font-size: xx-large; margin-bottom: 4rem"
+  >
+    Unsere Jobangebote
+  </h1>
+  <!-- Section: Design Block -->
+  <ng-container *ngFor="let job of jobs$ | async; let i = index">
+    <app-job [job]="job"></app-job>
+  </ng-container>
+</div>

@@ -1,0 +1,10 @@
+h1 {
+  font-weight: bolder;
+  line-height: 4rem;
+  color: black;
+  @apply text-black text-6xl;
+}
+
+p {
+  @apply break-words !important;
+}

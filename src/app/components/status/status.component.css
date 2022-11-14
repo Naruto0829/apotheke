@@ -1,0 +1,5 @@
+.bg-clip-text{
+  @apply text-blue-700;
+  @apply italic;
+
+}

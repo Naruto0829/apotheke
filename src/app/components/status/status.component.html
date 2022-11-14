@@ -1,0 +1,17 @@
+<h4 style="font-size: larger"></h4>
+<ng-container *ngIf="offen; else geschlossen">
+  <h4
+    style="font: bold; font-size: larger"
+    class="font-bold text-2xl"
+  >
+  Wir haben jetzt: <span class="text-green-600">geöffnet</span> 
+  </h4></ng-container
+>
+<ng-template #geschlossen>
+  <h4
+    style="font: bold; font-size: larger"
+    class="font-bad text-2xl"
+  >
+  Wir haben jetzt: <span class="text-red-600 ">geschlossen</span> 
+  </h4></ng-template
+>

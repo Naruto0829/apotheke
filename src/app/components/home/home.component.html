@@ -1,0 +1,16 @@
+<ng-container *ngIf="data$ | async as data"
+  ><app-header [data]="data"></app-header>
+  <app-highlights></app-highlights>
+
+  <app-feature-box [data]="data" [offen]="offen"></app-feature-box
+>
+</ng-container>
+
+<!-- <app-dialog></app-dialog> -->
+<!-- <app-news></app-news> -->
+
+<!-- <hr /> -->
+<!-- <app-faq></app-faq> -->
+<!-- <hr /> -->
+<!-- <app-team></app-team> -->
+<!-- <app-newsletter></app-newsletter> -->

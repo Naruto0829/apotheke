@@ -1,0 +1,20 @@
+<h1 mat-dialog-title>Kontakt-Informationen</h1>
+<mat-dialog-content class="mat-typography">
+  <app-kontakt-form
+    *ngIf="!show"
+    [action]="'vorbestellen'"
+    [hasBetreff]="false"
+    (postForm)="orderProduct($event)"
+  ></app-kontakt-form>
+  <div
+    *ngIf="show"
+    class="bg-green-100 rounded-lg py-5 px-6 text-base text-green-700 mb-3"
+    role="alert"
+  >
+    Vielen Dank ! Ihre Bestellung wird nun bearbeitet und liegt in 30 Minuten
+    zur Abholung bereit.
+  </div>
+</mat-dialog-content>
+<div mat-dialog-actions>
+  <button mat-stroked-button mat-dialog-close color="warn">abbrechen</button>
+</div>

@@ -1,0 +1,14 @@
+{
+  "/api/*": {
+    "target": "https://riem-apotheke.de:8080/api",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/search/*": {
+    "target": "https://riem-apotheke.de:8080/api",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}

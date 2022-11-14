@@ -1,0 +1,9 @@
+<ng-container *ngIf="impressum$ | async as impressum">
+  <main class="mt-24 p-10 overflow-auto">
+    <h1>Impressum</h1>
+    <section
+      [innerHTML]="impressum.data.Impressum"
+      class="mt-32 mb:20"
+    ></section>
+  </main>
+</ng-container>

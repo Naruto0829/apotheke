@@ -1,0 +1,15 @@
+* {
+  font-family: 'Times New Roman', Times, serif;
+}
+#logo-svg {
+  @apply scale-[0.3];
+  @apply font-sans !important;
+  @apply m-auto;
+}
+#logo-svg * {
+  @apply font-bold;
+  font-family: "Times New Roman", Times, serif;
+}
+.margin{
+  @apply mb-8;
+}

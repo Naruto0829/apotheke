@@ -1,0 +1,98 @@
+<div
+class="flex flex-col border rounded-lg overflow-hidden bg-white mb-3"
+>
+<button
+  style="margin-right: -92%; font-size: 23px; font-family: cursive"
+  (click)="removeProduct(item._id)"
+>
+  x
+</button>
+
+<div class="grid grid-cols-1 sm:grid-cols-4">
+  <div
+    class="flex flex-col border-b sm:border-b-0 items-center p-8 sm:px-4 sm:h-full sm:justify-center"
+  >
+    <p class="text-7xl font-bold text-[#0ed3cf] rounded-full">
+      <img src="{{ item.image }}" alt="" style="height: 50px" />
+    </p>
+  </div>
+  <div class="flex flex-col sm:border-l col-span-3">
+    <div class="flex flex-col space-y-4 p-6 text-gray-600">
+      <div class="flex flex-row text-sm">
+        <p class="flex items-center text-gray-500">
+          <img
+            src="/assets/riem/package.png"
+            style="width: 21px; padding-right: 4px"
+          />
+          <span class="font-semibold mr-2 text-xs uppercase"
+            >Produkt:</span
+          >
+          <span>{{ item.title }}</span>
+        </p>
+      </div>
+      <div class="flex flex-row text-sm">
+        <p class="flex items-center text-gray-500">
+          <img
+            src="/assets/riem/money-bag.png"
+            style="width: 21px; padding-right: 4px"
+          />
+          <span class="font-semibold mr-2 text-xs uppercase"
+            >Preis:</span
+          >
+          <span>
+            {{
+              item.uvp * (1 - item.discount / 100)
+                | roundTo
+                | toLocalDE
+            }}€</span
+          >
+        </p>
+      </div>
+      <div class="flex flex-row text-sm">
+        <p class="flex items-center text-gray-500">
+          <img
+            src="/assets/riem/123-numbers.png"
+            style="width: 21px; padding-right: 4px"
+          />
+          <span class="font-semibold mr-2 text-xs uppercase"
+            >Menge:</span
+          >
+          <select
+            #productCount
+            class="form-control"
+            name="product_cn"
+            id="product_cn"
+            (change)="changeProductCN(item._id, productCount)"
+          >
+            <option
+              [selected]="item.amount == i"
+              *ngFor="
+                let i of [
+                  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+                ]
+              "
+            >
+              {{ i }}
+            </option>
+          </select>
+        </p>
+      </div>
+      <div class="flex flex-row text-sm">
+        <p class="flex items-center text-gray-500">
+          <img
+            src="/assets/riem/money-bag.png"
+            style="width: 21px; padding-right: 4px"
+          />
+          <span class="font-semibold mr-2 text-xs uppercase"
+            >Gesamtpreis:</span
+          >
+          <span>{{
+            (item.uvp * (1 - item.discount / 100) | roundTo) *
+              item.amount | toLocalDE
+          }}€</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

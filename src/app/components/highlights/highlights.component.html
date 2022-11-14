@@ -1,0 +1,14 @@
+<ng-container *ngIf="highlights$ | async">
+  <section *ngIf="hasOdd">
+    <div class="m-auto">
+      <app-highlight [highlight]="highlight!"></app-highlight>
+    </div>
+  </section>
+  <section class="grid grid-cols-1 text-center">
+    <ng-container *ngFor="let highlight of highlights">
+      <div style="margin-bottom: 2rem; margin-top: 2rem">
+        <app-highlight [highlight]="highlight"></app-highlight>
+      </div>
+    </ng-container>
+  </section>
+</ng-container>

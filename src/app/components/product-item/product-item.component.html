@@ -1,0 +1,115 @@
+<div class="mb-6 lg:mb-0 zoom">
+  <div class="relative block p-6 bg-white rounded-lg shadow-lg"
+    style="background-color: #f3f4f6;height: 100%;margin-bottom: 100px; ">
+    <div class=" items-center lg:flex" style="flex-direction:column;">
+      <div class="w-full grow-0 shrink-0 basis-auto">
+        <img src="/assets/riem/product.png" alt="Trendy Pants and Shoes"
+          class="w-full mb-6 rounded-md lg:mb-0  transition duration-150 ease-in-out" data-tor="place.left place.top"
+          style="position: relative;top: -79px;cursor: pointer;" data-bs-toggle="modal"
+          data-bs-target="#exampleModalCenteredScrollable"
+          (click)="selectProduct()"
+          />
+          <div class="ribbon red"><span>Popular</span></div>
+      </div>
+      <div class="w-full grow-0 shrink-0 basis-auto">
+        <h5 class="mb-2 text-lg font-bold">Darren Randolph</h5>
+        <p class="mb-4 text-gray-500">This product is best good in the world If you need this product, you can click add
+          cart button anytime</p>
+        <ul class="flex justify-center mx-auto list-inside mt-8">
+          <div class="px-2 lg:pl-0 price-item">
+            <label class="price-label" for="">PTS</label>
+            <span>25.00</span>
+          </div>
+          <div class="px-2 lg:pl-0 price-item">
+            <label class="price-label" for="">AST</label>
+            <span>4.7</span>
+          </div>
+          <div class="px-2 lg:pl-0 price-item">
+            <label class="price-label" for="">FG%</label>
+            <span>44.7</span>
+          </div>
+        </ul>
+        <ul class="flex justify-center mx-auto list-inside mt-8">
+          <button
+            (click)="increase()"
+            style="margin-left: 47px"
+            type="button"
+            class=" cart-btn trxansition duration-150 ease-in-out addCart inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out ml-1">
+            +
+          </button>
+          <input type="text"  [(ngModel)]="product_amount" id="product_amount" class="product-amount px-2 lg:pl-0" value="0" />
+          <button (click)="decrease()" type="button"
+            class="cart-btn transition duration-150 ease-in-out removeCart inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out ml-1">
+            -
+          </button>
+          <img
+            (click)="addCart()"
+            class="add-cart-ico"
+            src="/assets/riem/add-to-cart-icon.png"
+            style="width: 33px;height: 33px;margin-left: 26px;cursor: pointer;"
+          />
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto"
+  id="exampleModalCenteredScrollable" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true"
+  role="dialog">
+  <div class="modal-dialog modal-dialog-centered relative w-auto pointer-events-none">
+    <div
+      class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
+      <div
+        class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
+        <h5 class="text-xl font-medium leading-normal text-gray-800" id="exampleModalScrollableLabel">
+          User Information
+        </h5>
+        <button type="button"
+          class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
+          data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body relative p-4">
+        <form>
+          <div class="form-group mb-6">
+            <input type="text"
+              class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+              id="name" placeholder="Name*" required />
+          </div>
+          <div class="form-group mb-6">
+            <input type="text"
+              class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+              id="telefon" placeholder="Telefon*" required />
+          </div>
+          <div class="form-group mb-6">
+            <input type="text"
+              class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+              id="address" placeholder="Address" />
+          </div>
+          <div class="form-group mb-6">
+            <input type="email"
+              class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+              id="email" placeholder="Email" required />
+          </div>
+          <div class="form-group mb-6">
+            <textarea
+              class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+              id="message" rows="3" placeholder="Message" required></textarea>
+          </div>
+          <button type="submit"
+            class="w-full px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
+            Order
+          </button>
+        </form>
+      </div>
+      <div
+        class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
+        <button type="button"
+          class="inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out"
+          data-bs-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

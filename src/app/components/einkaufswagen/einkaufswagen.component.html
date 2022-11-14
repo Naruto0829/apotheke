@@ -1,0 +1,63 @@
+<div class="offcanvas-container">
+  <div
+    class="offcanvas offcanvas-end fixed bottom-0 flex flex-col max-w-full bg-white invisible bg-clip-padding shadow-sm outline-none transition duration-300 ease-in-out text-gray-700 top-0 right-0 border-none w-120"
+    tabindex="-1"
+    id="offcanvasRight"
+    aria-labelledby="offcanvasRightLabel"
+  >
+    <div class="offcanvas-header flex items-center justify-between p-4">
+      <h5
+        class="offcanvas-title mb-0 leading-normal font-semibold text-lg"
+        id="offcanvasRightLabel"
+      >
+        Einkaufswagen
+      </h5>
+      <button
+        type="button"
+        class="btn-close box-content w-4 h-4 p-2 -my-5 -mr-2 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="offcanvas-body flex-grow p-4 overflow-y-auto">
+      <ng-container *ngIf="storedProduct.length > 0">
+        <ng-container *ngFor="let item of storedProduct">
+          <app-product
+            [item]="item"
+            (changeCount)="changeProductCN($event)"
+            (removeItem)="removeProduct($event)"
+          ></app-product>
+        </ng-container>
+      </ng-container>
+    </div>
+    <hr />
+    <div class="flex flex-col w-full bottom-0">
+      <div
+        class="grid grid-cols-2 border-t divide-x text-zinc-800 font-sans bg-gray-50 dark:bg-transparent py-3"
+      >
+        <a
+          style="font-family: monospace !important"
+          class="cursor-pointer uppercase text-base flex flex-row items-center justify-center font-semibold font-sans"
+        >
+          <div class="mx-5" style="font-family: monospace !important">
+            Gesamtpreis: {{ totalPrice | toLocalDE }}€
+          </div>
+        </a>
+
+        <!-- <a
+          class="cursor-pointer uppercase text-xs flex flex-row items-center justify-center font-semibold text-blue-500"
+        > -->
+        <button
+          mat-raised-button
+          [disabled]="cartCount == 0"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+          (click)="openKontaktDialog()"
+        >
+          <mat-icon color="primary">shopping_cart</mat-icon>
+        </button>
+        <!-- </a> -->
+      </div>
+    </div>
+  </div>
+</div>

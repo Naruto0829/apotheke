@@ -1,0 +1,39 @@
+<header>
+  <div
+    class="h-[95vh] relative bg-no-repeat bg-cover bg-center bg-fixed"
+    style="opacity: 0.9;margin: 0 auto;"
+    [style.background-image]="'url(' + bild + ')'"
+  >
+    <div
+      class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
+      style="background: rgba(0, 0, 0, 0.184)"
+    >
+      <div class="flex justify-center p-20 items-center h-full flex-col">
+        <div class="break-words text-center font-extrabold px-6 md:px-12 mt-24">
+          <p
+            style="margin: auto; font-family: 'Times New Roman', Times, serif"
+            *ngIf="data.greeting as greeting"
+            class="text-6xl text-center text-slate-50 w-[99vw]"
+          >
+            {{ greeting }}
+          </p>
+          <p
+            style="
+              line-height: 3rem;
+              font-weight: bold;
+              margin: auto;
+              margin-top: 2rem;
+              margin-bottom: 4rem;
+              font-family: 'Times New Roman', Times, serif;
+            "
+            class="text-6xl font-bold mb-8 text-slate-50 w-[99vw]"
+            *ngIf="data.beschreibung as beschreibung"
+          >
+            {{ beschreibung }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Background image -->
+</header>

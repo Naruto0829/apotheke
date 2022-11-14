@@ -1,0 +1,139 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="form-group mb-6">
+    <mat-form-field appearance="fill" class="w-full">
+      <mat-label>Anrede</mat-label>
+      <mat-select matN formControlName="anrede">
+        <mat-option value="Herr">Herr</mat-option>
+        <mat-option value="Frau">Frau</mat-option>
+        <mat-option value="Frau">Andere</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="form-group mb-6">
+    <mat-form-field appearance="fill" class="w-full">
+      <mat-label>Name</mat-label>
+      <input
+        matInput
+        type="text"
+        placeholder="Name"
+        required
+        formControlName="name"
+      />
+      <mat-error *ngIf="checkForm('name', 'required')"
+        >Bitte den Namen eingeben</mat-error
+      >
+      <mat-error *ngIf="checkForm('name', 'pattern')"
+        >Bitte einen gültigen Namen eingeben</mat-error
+      >
+      <mat-error *ngIf="checkForm('name', 'maxlength')"
+        >Der Name ist mehr als 15 Zeichen</mat-error
+      >
+    </mat-form-field>
+  </div>
+  <div class="form-group mb-6">
+    <mat-form-field appearance="fill" class="w-full">
+      <mat-label>Vorname</mat-label>
+      <input
+        formControlName="vorname"
+        matInput
+        type="text"
+        placeholder="Vorname"
+        required
+      />
+
+      <mat-error *ngIf="checkForm('vorname', 'required')"
+        >Bitte den Vornamen eingeben</mat-error
+      >
+      <mat-error *ngIf="checkForm('vorname', 'pattern')"
+        >Bitte einen gültigen Vornamen eingeben</mat-error
+      >
+      <mat-error *ngIf="checkForm('vorname', 'maxlength')"
+        >Der Vorname ist mehr als 15 Zeichen</mat-error
+      >
+    </mat-form-field>
+  </div>
+  <div class="form-group mb-6">
+    <mat-form-field appearance="fill" class="w-full">
+      <mat-label>Telefonnummer</mat-label>
+      <input
+        formControlName="telefon"
+        matInput
+        type="text"
+        placeholder="+49 123 4567 8901"
+        required
+      />
+
+      <mat-error *ngIf="checkForm('telefon', 'required')"
+        >Bitte die Telefonnummer eingeben</mat-error
+      >
+      <mat-error *ngIf="checkForm('telefon', 'pattern')"
+        >Bitte eine gültige deutsche Telefonnummer eingeben</mat-error
+      >
+    </mat-form-field>
+  </div>
+  <div class="form-group mb-6">
+    <mat-form-field appearance="fill" class="w-full">
+      <mat-label>E-mail</mat-label>
+      <input
+        formControlName="email"
+        matInput
+        type="email"
+        placeholder="maxmustermann@example.de"
+        required
+      />
+      <mat-error *ngIf="checkForm('email', 'required')"
+        >Bitte die E-mail eingeben</mat-error
+      >
+      <mat-error *ngIf="checkForm('email', 'pattern')"
+        >Bitte eine gültige Email eingeben</mat-error
+      >
+    </mat-form-field>
+  </div>
+  <div class="form-group mb-6" *ngIf="hasBetreff">
+    <mat-form-field appearance="fill" class="w-full">
+      <mat-label>Betreff</mat-label>
+      <input
+        formControlName="betreff"
+        matInput
+        type="text"
+        placeholder="Betreff"
+        required
+      />
+      <mat-error *ngIf="checkForm('betreff', 'required')"
+        >Bitte den Betreff eingeben</mat-error
+      >
+    </mat-form-field>
+  </div>
+
+  <div class="form-group mb-6">
+    <mat-form-field appearance="fill" class="w-full">
+      <textarea
+        rows="3"
+        placeholder="Nachricht"
+        formControlName="nachricht"
+        required
+        matInput
+        maxlength="250"
+        #input
+        class="text-xl"
+      ></textarea>
+      <mat-hint align="end">{{ input.value.length || 0 }}/250</mat-hint>
+      <mat-error *ngIf="checkForm('nachricht', 'required')"
+        >Bitte Ihre Nachricht eingeben</mat-error
+      >
+      <mat-error *ngIf="checkForm('nachricht', 'maxlength')"
+        >Bitte maximal 250 Zeichen eingeben</mat-error
+      >
+    </mat-form-field>
+  </div>
+  <button
+    type="submit"
+    mat-raised-button
+    color="primary"
+    class="w-full"
+    [disabled]="form.invalid || form.untouched"
+    [disableRipple]="form.invalid"
+  >
+    {{ action }}
+  </button>
+</form>

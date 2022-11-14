@@ -1,0 +1,26 @@
+<h2 class="text-3xl font-bold mb-6 text-blue-600" mat-dialog-title>
+  {{ job?.title }}
+</h2>
+<h1 cdkFocusInitial></h1>
+<mat-dialog-content *ngIf="job?.description as desc" class="mat-typography">
+  <p
+    *ngIf="job?.telefon as tel"
+    class="text-gray-800 mb-6 pb-2 lg:pb-0 text-xl"
+  >
+    Telefon: {{ tel }}
+  </p>
+
+  <p
+    *ngIf="job?.adresse as addr"
+    class="text-gray-800 mb-6 pb-2 lg:pb-0 text-xl"
+  >
+    Adresse: {{ addr }}
+  </p>
+  <section 
+    [innerHTML]="desc"
+    class="desc text-gray-700 mb-0 text-2xl leading-10"
+  ></section>
+</mat-dialog-content>
+<div mat-dialog-actions>
+  <button mat-stroked-button mat-dialog-close color="warn">schließen</button>
+</div>

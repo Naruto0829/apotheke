@@ -1,0 +1,5 @@
+@media screen and (min-width:1870px) {
+    section{
+    @apply lg:grid-cols-2;
+}
+}

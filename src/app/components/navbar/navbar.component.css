@@ -1,0 +1,32 @@
+.navbar {
+  background-color: #f3f4f6 !important;
+  @apply font-sans text-slate-600;
+  font-weight: bold;
+  font-size: 20px;
+  overflow-x: hidden;
+}
+
+:host {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.logo-wrapper {
+  @apply relative w-48 h-16;
+}
+@media screen and (max-width: 991px) {
+  .shopping-cart {
+    @apply mt-6 ml-3;
+  }
+}
+
+.logo-svg {
+  @apply block;
+  @apply w-full h-full;
+}
+span.cart-num {
+  position: absolute;
+  top: -15px;
+  font-size: 15px;
+  right: 14px;
+}

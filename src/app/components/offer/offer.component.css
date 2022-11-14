@@ -1,0 +1,17 @@
+.search-panel{
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  right: 50%;
+  transform: translate(50%, 50%);
+}
+
+div.banner{
+  height: 583px;
+  background-image: url(/assets/riem/bg1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+

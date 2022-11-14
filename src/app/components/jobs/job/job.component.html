@@ -1,0 +1,46 @@
+<section class="text-gray-800 text-center md:text-left p-4">
+  <div class= "p-10 rounded-lg shadow-xl flex flex-wrap mb-10" style="background-color: #fefefaf8;">
+    <div
+      *ngIf="job.bild?.url"
+      class="grow-0 shrink-0 basis-auto w-full md:w-3/12 px-3 mb-6 md:mb-0 ml-auto"
+    >
+      <div
+        class="relative overflow-hidden bg-no-repeat bg-cover ripple shadow-lg rounded-lg mb-6"
+        data-mdb-ripple="true"
+        data-mdb-ripple-color="light"
+      >
+        <img [src]="job.bild.url" class="w-full" />
+        <a href="#!">
+          <div
+            class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 hover:opacity-100 transition duration-300 ease-in-out"
+            style="background-color: rgba(251, 251, 251, 0.2)"
+          ></div>
+        </a>
+      </div>
+    </div>
+
+    <div
+      class="grow-0 shrink-0 basis-auto w-full md:w-9/12 xl:w-7/12 px-3 mb-6 md:mb-0 mr-auto"
+    >
+      <h5
+        class="font-bold mb-7 text-blue-600"
+        style="font-size: xx-large; margin-bottom: 3rem"
+      >
+        {{ job.title }}
+      </h5>
+      <div
+        *ngIf="job.adresse"
+        class="mb-3 text-black font-medium text-sm flex items-center justify-center md:justify-start"
+      >
+        Adresse: {{ job.adresse }}
+      </div>
+      <p class="text-gray-500 mb-6" *ngIf="job.telefon">
+        Telefon: <u>{{ job.telefon }}</u>
+      </p>
+      <p class="text-gray-600 text-2xl">
+        {{ job.short_desc }}
+      </p>
+      <button mat-stroked-button style="margin-bottom: 2rem" (click)="openJobDialog()">Mehr lesen</button>
+    </div>
+  </div>
+</section>

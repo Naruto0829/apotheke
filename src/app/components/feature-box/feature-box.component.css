@@ -1,0 +1,26 @@
+.feature-box {
+  @apply p-4 text-xl;
+}
+.rounded-lg {
+  position: relative;
+}
+.inline-block,
+.text-black,
+.bg-clip-text {
+  color: #3c786c;
+  fill: #3c786c;
+  font-weight: bold;
+}
+.feature-img {
+  margin: auto !important;
+  @apply mb-5;
+}
+.items-center {
+  color: #3c786c ;
+  fill: #3c786c;
+  font-weight: bold;
+}
+
+* {
+  font-family: "Times New Roman", Times, serif;
+}
