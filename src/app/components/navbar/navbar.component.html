@@ -32,26 +32,27 @@
         ></path>
       </svg>
     </button>
+    <div class="logo-wrapper">
+      <a
+        routerLink="/home"
+        class="logo-svg"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        (click)="uncollapse()"
+      >
+        <img
+          class="h-[5rem] w-48"
+          src="https://riem-apotheke-bucket.s3.eu-west-2.amazonaws.com/logo_vector_87b7d82bde.svg?updated_at=2022-10-23T19:24:16.390Z"
+          alt=""
+          srcset=""
+        />
+      </a>
+    </div>
     <div
       class="items-center flex-grow collapse navbar-collapse"
       id="navbarSupportedContent"
     >
-      <div class="logo-wrapper">
-        <a
-          routerLink="/home"
-          class="logo-svg"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          (click)="uncollapse()"
-        >
-          <img
-            class="h-[5rem] w-48"
-            src="https://riem-apotheke-bucket.s3.eu-west-2.amazonaws.com/logo_vector_87b7d82bde.svg?updated_at=2022-10-23T19:24:16.390Z"
-            alt=""
-            srcset=""
-          />
-        </a>
-      </div>
+
 
       <!-- Left links -->
       <ul class="flex flex-col pl-0 mr-auto navbar-nav list-style-none" autoscroll="true">

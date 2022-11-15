@@ -24,7 +24,7 @@ export class KontaktComponent implements OnInit {
 
   ngOnInit(): void {
     window.scrollTo(0, 0);
-    
+
     setTimeout(() => {
       this.stop = true;
     }, 1000);

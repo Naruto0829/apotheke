@@ -25,6 +25,7 @@
     "@ngtools/webpack": "^14.2.6",
     "meilisearch": "^0.27.0",
     "ngrx": "0.0.1-security",
+    "ngx-material-file-input": "^4.0.0",
     "route-parser": "^0.0.5",
     "rxjs": "~7.4.0",
     "sendmail": "^1.6.1",

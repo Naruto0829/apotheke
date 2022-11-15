@@ -134,3 +134,24 @@ label.price-label {
 button.unsere-angebote-btn {
   display: none !important;
 }
+
+div.discount-ico{
+  background: url('../../../assets/riem/discountico.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 5%;
+  top: 5%;
+}
+
+span.discount{
+  position: absolute;
+  font-size: 19px;
+  font-weight: bold;
+  color: #ebebeb;
+  left: 5%;
+  top: 72%;
+}
+

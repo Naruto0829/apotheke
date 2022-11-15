@@ -27,5 +27,7 @@ export class FeatureBoxComponent implements OnInit {
   @Input() offen = true;
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+      console.log(this.offen)
+  }
 }

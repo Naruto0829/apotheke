@@ -4,7 +4,13 @@
     style="height: 100%;"
   >
     <div class="items-center lg:flex" style="flex-direction: column">
-      <div class="card-img">
+      <div class="card-img" >
+        <div class="discount-ico">
+          <span class="discount">
+            {{ item.discount }}
+          </span>
+        </div>
+
         <img
           src="{{ item.bild.url }}"
           alt="Trendy Pants and Shoes"
@@ -32,7 +38,7 @@
           style="font-family: 'Times New Roman', Times, serif"
         [innerHTML]="item.description"
           >
-          
+
         </p>
         <ul class="flex justify-center mx-auto list-inside mt-8">
           <div class="px-2 lg:pl-0 price-item text-green-600">

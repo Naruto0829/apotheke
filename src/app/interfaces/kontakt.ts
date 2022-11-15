@@ -6,4 +6,5 @@ export interface Kontakt {
     email:string;
     nachricht:string;
     betreff?:string;
+    attach_file:Object;
 }

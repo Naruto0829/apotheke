@@ -14,10 +14,12 @@ export class AngeboteComponent implements OnInit {
   data:Angebot[] =[]
   constructor(private apiService: ApiService, private httpClient: HttpClient) {}
 
+  public currentPageNum :any = "20";
+
   ngOnInit(): void {
     window.scrollTo(0,0)
     this.angebote$ = this.apiService.getAngebote();
-    
+
     setTimeout(() => {
       this.stop=true
     }, 1000);

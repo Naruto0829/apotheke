@@ -104,6 +104,26 @@
       >
     </mat-form-field>
   </div>
+  <div class="form-group mb-6" >
+    <mat-form-field style="width: 100%;">
+			<mat-label>Attachment</mat-label>
+			<button type="button" mat-icon-button matPrefix (click)="f_input.click()">
+        <mat-icon>attach_file</mat-icon>
+      </button>
+			<input type="text" readonly matInput [formControl]="display" />
+			<input
+        formControlName="attach_file"
+        type="file"
+        hidden
+        accept=".jpg, .jpeg, .png, .pdf"
+        #f_input
+        (change)="handleFileInputChange($event)"
+      />
+      <div *ngIf="uploadLimitSize" class="mat-error ng-tns-c106-8 ng-star-inserted mt-5" style="position: absolute; ">
+        The total size must not exceed 5 MB.
+      </div>
+		</mat-form-field>
+  </div>
 
   <div class="form-group mb-6">
     <mat-form-field appearance="fill" class="w-full">
@@ -131,7 +151,7 @@
     mat-raised-button
     color="primary"
     class="w-full"
-    [disabled]="form.invalid || form.untouched"
+    [disabled]="form.invalid || form.untouched || uploadLimitSize"
     [disableRipple]="form.invalid"
   >
     {{ action }}
