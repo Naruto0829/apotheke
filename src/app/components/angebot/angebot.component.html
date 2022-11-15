@@ -1,11 +1,10 @@
 <div class="lg:mb-0 zoom card relative">
   <div
-    class="card-body relative block p-6 rounded-lg shadow-lg"
-    style="height: 100%;"
+    class="card-body relative block p-6 rounded-lg shadow-lg w-full"
   >
-    <div class="items-center lg:flex" style="flex-direction: column">
+    <div class="items-center lg:flex flex-col">
       <div class="card-img" >
-        <div class="discount-ico">
+        <div class="discount-ico w-28 h-28 absolute bg-contain bg-no-repeat">
           <span class="discount">
             {{ item.discount }}
           </span>
@@ -14,9 +13,8 @@
         <img
           src="{{ item.bild.url }}"
           alt="Trendy Pants and Shoes"
-          class="rounded-md lg:mb-0 transition duration-100 ease-in-out"
+          class="rounded-md lg:mb-0 transition duration-100 ease-in-out w-full h-full cursor-pointer"
           data-tor="place.left place.top"
-          style="cursor: pointer; width: 100%; height: 100%"
           (click)="selectProduct()"
         />
         <div class="ribbon red" *ngIf="item.type == 'exclusive'">

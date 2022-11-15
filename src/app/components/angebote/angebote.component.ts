@@ -2,7 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ApiService } from 'src/app/services/api.service';
-import { isBigIntLiteral } from 'typescript';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+  // ...
+} from '@angular/animations';
 
 @Component({
   selector: 'app-angebote',
@@ -20,8 +27,8 @@ export class AngeboteComponent implements OnInit {
     constructor(private apiService: ApiService, private httpClient: HttpClient) {}
 
     public length  : number  = 0;
-    public pageSize : number = 5;
-    public pageSizeOptions: any = [5, 10, 30];
+    public pageSize : number = 20;
+    public pageSizeOptions: any = [20, 50, 100];
 
     ngOnInit(): void {
         window.scrollTo(0, 0);

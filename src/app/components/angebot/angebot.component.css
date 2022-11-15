@@ -139,9 +139,6 @@ div.discount-ico{
   background: url('../../../assets/riem/discountico.png');
   background-size: contain;
   background-repeat: no-repeat;
-  width: 100px;
-  height: 100px;
-  position: absolute;
   left: 5%;
   top: 5%;
 }
