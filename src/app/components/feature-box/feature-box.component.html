@@ -1,63 +1,13 @@
 <div class="container my-24 px-6 mx-auto">
   <section class="mb-32 text-gray-800 text-center">
-    <div class="grid lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-1 gap-x-6 lg:gap-x-12">
-
-      <div class="card {{ offen == true? 'green': '' }} mb-12 lg:mb-0 duration-300 top-1/4">
-        <div class="additional">
-          <div class="user-card pr-4">
-            {{ offen == true ? 'geöffnet': 'geschlossen' }}
-          </div>
-        </div>
-        <div class="general">
-          <div class="text-base">
-            <div class="text-center text-lg">
-              <div *ngIf="data.werktag as werktage" class="">
-                <img src="/assets/riem/feature-3.png" class="feature-img" />
-                <h4 style="font-weight: bold; font-size: larger">
-                  Öffnungszeiten
-                </h4>
-                <table class="w-full font-bold" style="font-family: 'Times New Roman', Times, serif">
-                  <ng-container *ngFor="let tag of werktage">
-                    <tr>
-                      <td>{{ tag.tag }}</td>
-                      <ng-container *ngIf="tag.offen; else geschlossen">
-                        <td>
-                          <ng-container *ngFor="
-                              let schicht of tag.oeffnungszeiten.schichten;
-                              let i = index
-                            ">
-                            <span *ngIf="i == 1">/&nbsp;</span>
-                            {{ schicht.von.st | formatWorkHours }}:{{
-                              schicht.von.min | formatWorkHours
-                            }}
-                            - {{ schicht.bis.st | formatWorkHours }}:{{
-                              schicht.bis.min | formatWorkHours
-                            }}
-                            <span *ngIf="i == 0"></span>
-                          </ng-container>
-                        </td>
-                      </ng-container>
-                      <ng-template #geschlossen>
-                        <td class="block text-right">geschlossen</td>
-                      </ng-template>
-                    </tr>
-                  </ng-container>
-                </table>
-              </div>
-              <div class="2">
-                <app-status [offen]="offen" class="mb-10"></app-status>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="mb-12 lg:mb-0 duration-300">
+    <div class="grid lg:grid-cols-3">
+      <div></div>
+      <div class="grid-cols-2 mb-12 lg:mb-0 duration-300 flag col-span-1">
         <div class="box ease-out block rounded-lg relative">
           <div class="clients text-center flex flex-col justify-center">
             <img src="/assets/riem/feature-2.png" class="feature-img" />
             <h5 style="font-weight: bold; font-size: x-large">Wir sprechen</h5>
-            <div class="flex items-center justify-center mt-6" style="padding: 35px">
+            <div class="flex items-center justify-center mt-6">
               <div class="w-full py-3 mr-4">
                 <img src="/assets/flags/de.svg" alt="ayroui" />
               </div>
@@ -74,83 +24,133 @@
           </div>
         </div>
       </div>
+      <div></div>
+    </div>
 
-      <div class="card green mb-6 lg:mb-0 duration-300 text-center top-2/3 ml-2">
-        <div class="additional">
-          <div class="user-card flex flex-row justify-center">
-            <div>
-              <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="home"
-                class="mt-7 pb-8 w-7 mr-4 indivne" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-                <path fill="currentColor"
-                  d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z">
-                </path>
-              </svg>
-            </div>
-            <div>
-              <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope" class="pb-8 w-7 mr-4"
-                role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <path fill="currentColor"
-                  d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z">
-                </path>
-              </svg>
-            </div>
-            <div>
-
-              <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="phone" class="pb-5 w-7 mr-4"
-                role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <path fill="currentColor"
-                  d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z">
-                </path>
-              </svg>
-            </div>
-
-            <div>
-
-              <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="print" class="w-7 mr-4" role="img"
-                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <path fill="currentColor"
-                  d="M448 192V77.25c0-8.49-3.37-16.62-9.37-22.63L393.37 9.37c-6-6-14.14-9.37-22.63-9.37H96C78.33 0 64 14.33 64 32v160c-35.35 0-64 28.65-64 64v112c0 8.84 7.16 16 16 16h48v96c0 17.67 14.33 32 32 32h320c17.67 0 32-14.33 32-32v-96h48c8.84 0 16-7.16 16-16V256c0-35.35-28.65-64-64-64zm-64 256H128v-96h256v96zm0-224H128V64h192v48c0 8.84 7.16 16 16 16h48v96zm48 72c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24z">
-                </path>
-              </svg>
-            </div>
-
-          </div>
+    <div class="service card {{ offen == true? 'green': '' }} mb-12 lg:mb-0 duration-300 top-1/4">
+      <div class="additional">
+        <div class="user-card pr-4">
+          {{ offen == true ? 'geöffnet': 'geschlossen' }}
         </div>
-        <div class="box rounded-lg relative text-lg ">
-          <div class="flex flex-col justify-items-center align-middle justify-center items-center">
-            <img src="/assets/riem/feature-1.png" class="feature-img" />
-            <h4 style="
-                font-size: x-large;
-                font-weight: bold;
-                font-family: 'Times New Roman', Times, serif;
-              ">
-              Kontakt
-            </h4>
-            <div class="items-center justify-center mb-4 ml-12">
-              <p *ngIf="data.adresse as adresse" class="text-lg" style="font-family: 'Times New Roman', Times, serif">
-
-                {{ adresse.strasse }} {{ adresse.nr }} • {{ adresse.plz }}
-                {{ adresse.ort }}
-              </p>
+      </div>
+      <div class="general">
+        <div class="text-base">
+          <div class="text-center text-lg">
+            <div *ngIf="data.werktag as werktage" class="">
+              <img src="/assets/riem/feature-3.png" class="feature-img" />
+              <h4 style="font-weight: bold; font-size: larger">
+                Öffnungszeiten
+              </h4>
+              <table class="w-full font-bold" style="font-family: 'Times New Roman', Times, serif">
+                <ng-container *ngFor="let tag of werktage">
+                  <tr>
+                    <td>{{ tag.tag }}</td>
+                    <ng-container *ngIf="tag.offen; else geschlossen">
+                      <td>
+                        <ng-container *ngFor="
+                            let schicht of tag.oeffnungszeiten.schichten;
+                            let i = index
+                          ">
+                          <span *ngIf="i == 1">/&nbsp;</span>
+                          {{ schicht.von.st | formatWorkHours }}:{{
+                            schicht.von.min | formatWorkHours
+                          }}
+                          - {{ schicht.bis.st | formatWorkHours }}:{{
+                            schicht.bis.min | formatWorkHours
+                          }}
+                          <span *ngIf="i == 0"></span>
+                        </ng-container>
+                      </td>
+                    </ng-container>
+                    <ng-template #geschlossen>
+                      <td class="block text-right">geschlossen</td>
+                    </ng-template>
+                  </tr>
+                </ng-container>
+              </table>
             </div>
-
-            <a *ngIf="data.email as email" [href]="emailLink"
-              class="flex items-center ml-12 mb-4 cursor-pointer text-lg">
-
-              {{ email }}
-            </a>
-            <div *ngIf="data.number as number" class="flex items-center ml-12  mb-4 text-lg ml-12">
-
-              {{ number }}
-            </div>
-            <div *ngIf="data.fax as fax" class="flex items-center ml-12  mb-10 text-lg ">
-
-              {{ fax }}
+            <div class="2">
+              <app-status [offen]="offen" class="mb-10"></app-status>
             </div>
           </div>
         </div>
       </div>
+    </div>
+    <div class="contact card green mb-6 lg:mb-0 duration-300 text-center top-2/3 ml-2">
+      <div class="additional">
+        <div class="user-card flex flex-row justify-center">
+          <div>
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="home"
+              class="mt-7 pb-8 w-7 mr-4 indivne" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+              <path fill="currentColor"
+                d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z">
+              </path>
+            </svg>
+          </div>
+          <div>
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope" class="pb-8 w-7 mr-4"
+              role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <path fill="currentColor"
+                d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z">
+              </path>
+            </svg>
+          </div>
+          <div>
 
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="phone" class="pb-5 w-7 mr-4"
+              role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <path fill="currentColor"
+                d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z">
+              </path>
+            </svg>
+          </div>
+
+          <div>
+
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="print" class="w-7 mr-4" role="img"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <path fill="currentColor"
+                d="M448 192V77.25c0-8.49-3.37-16.62-9.37-22.63L393.37 9.37c-6-6-14.14-9.37-22.63-9.37H96C78.33 0 64 14.33 64 32v160c-35.35 0-64 28.65-64 64v112c0 8.84 7.16 16 16 16h48v96c0 17.67 14.33 32 32 32h320c17.67 0 32-14.33 32-32v-96h48c8.84 0 16-7.16 16-16V256c0-35.35-28.65-64-64-64zm-64 256H128v-96h256v96zm0-224H128V64h192v48c0 8.84 7.16 16 16 16h48v96zm48 72c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24z">
+              </path>
+            </svg>
+          </div>
+
+        </div>
+      </div>
+      <div class="box rounded-lg relative text-lg ">
+        <div class="flex flex-col justify-items-center align-middle justify-center items-center p-4">
+          <img src="/assets/riem/feature-1.png" class="feature-img pl-3" />
+          <h4 style="
+              font-size: x-large;
+              font-weight: bold;
+              font-family: 'Times New Roman', Times, serif;
+            "
+            class="pl-3"
+            >
+            Kontakt
+          </h4>
+          <div class="items-center justify-center mb-4 ml-12">
+            <p *ngIf="data.adresse as adresse" class="text-lg" style="font-family: 'Times New Roman', Times, serif">
+
+              {{ adresse.strasse }} {{ adresse.nr }} • {{ adresse.plz }}
+              {{ adresse.ort }}
+            </p>
+          </div>
+
+          <a *ngIf="data.email as email" [href]="emailLink" class="flex items-center ml-12 mb-4 cursor-pointer text-lg">
+
+            {{ email }}
+          </a>
+          <div *ngIf="data.number as number" class="flex items-center ml-12  mb-4 text-lg ml-12">
+
+            {{ number }}
+          </div>
+          <div *ngIf="data.fax as fax" class="flex items-center ml-12  mb-10 text-lg ">
+
+            {{ fax }}
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </div>

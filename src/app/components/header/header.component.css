@@ -8,3 +8,11 @@ h1 {
 p {
   @apply break-words !important;
 }
+
+@media screen and (max-width:997px) {
+
+  .header-panel{
+    background-position: center;
+    background-size: cover;
+  }
+}
