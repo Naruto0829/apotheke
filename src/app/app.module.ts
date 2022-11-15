@@ -59,6 +59,8 @@ import { KontaktDialogComponent } from './components/dialogs/kontakt-dialog/kont
 import { MatSelectModule} from '@angular/material/select';
 import { ProductComponent } from './components/einkaufswagen/product/product.component';
 import { AfterNachrichtDialogComponent } from './components/dialogs/after-nachricht-dialog/after-nachricht-dialog.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -103,6 +105,7 @@ import { AfterNachrichtDialogComponent } from './components/dialogs/after-nachri
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    MatPaginatorModule,
     BrowserAnimationsModule,
     FormsModule,
     MatInputModule,

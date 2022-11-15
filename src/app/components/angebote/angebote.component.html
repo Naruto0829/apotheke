@@ -7,29 +7,18 @@
     Unsere neuen Angebote
   </h1>
   <section class="flex flex-col p-4 justify-center align-middle min-h-screen">
-    <div class="flex flex-row justify-center">
-      <div style="width: 45%">
+    <div class="flex flex-row justify-center" id="search-panel">
+      <div style="width: 45%" class="search-item">
           <app-searchbar (searched)="show($event)"></app-searchbar>
       </div>
-      <div class="p-2">
-        <button
-          style="margin-right: 47px"
-          type="button"
-          class="cart-btn trxansition duration-150 ease-in-out addCart inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out ml-1"
-        >1</button>
-        <mat-form-field appearance="fill">
-          <mat-label>Select an option</mat-label>
-          <mat-select [(value)]="currentPageNum">
-            <mat-option value="20">20</mat-option>
-            <mat-option value="50">50</mat-option>
-            <mat-option value="100">100</mat-option>
-          </mat-select>
-        </mat-form-field>
-         <button
-          style="margin-left: 47px"
-          type="button"
-          class="cart-btn trxansition duration-150 ease-in-out addCart inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out ml-1"
-        >2</button>
+      <div class="p-2 pagenation-item">
+        <mat-paginator
+          [length]="length"
+          [pageSize]="pageSize"
+          [pageSizeOptions]="pageSizeOptions"
+          (page)="pageHandle($event)"
+          aria-label="Select page">
+        </mat-paginator>
       </div>
     </div>
     <div class="items-center">

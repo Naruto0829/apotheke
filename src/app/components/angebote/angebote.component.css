@@ -6,6 +6,22 @@
     @apply md:grid-cols-2 !important;
   }
 }
+
+@media screen and (max-width:997px) {
+
+  #search-panel{
+    flex-direction: column !important;
+  }
+
+  #search-panel > .search-item{
+    width: 100% !important;
+  }
+
+  #search-panel > .pagenation-item{
+    width: 100% !important;
+  }
+}
+
 @media screen and (min-width:1400px) {
   .angebote {
     @apply md:grid-cols-3 !important;
