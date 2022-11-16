@@ -44,7 +44,7 @@
   box-shadow: 0 8px 16px -8px rgb(0 0 0 / 40%);
   border-radius: 6px;
   overflow: hidden;
-  position: relative;
+  z-index: 99;
   position: fixed;
   right: 0%;
   width: 3%;
@@ -220,7 +220,7 @@
   }
 
   .card:hover{
-    width: 400px !important;
+    width: 345px !important;
   }
   .card * {
     font-size: 14px;;
@@ -232,5 +232,36 @@
 
   .card .additional{
     width: 62px !important;
+  }
+}
+
+@media only screen and (max-width: 375px)
+{
+  .card{
+    position: relative !important;
+    width: 345px !important;
+    margin-left: -14px;
+  }
+  .card:hover{
+    width: 345px !important;
+  }
+  .contact svg{
+    width: 20px !important;
+  }
+
+}
+
+@media only screen and (max-width: 667px)
+{
+  .card{
+    position: relative !important;
+    width: 100% !important;
+  }
+
+  .card:hover{
+    width: 100% !important;
+  }
+  .contact svg{
+    width: 20px !important;
   }
 }
